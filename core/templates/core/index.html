@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="login-section">
+            <div class="logo">
+                <img src="{% static 'core/img/logo.png' %}" alt="logo">
+            </div>
+            <h2>Bem-Vindo</h2>
+            <p>por favor insira seus dados</p>
+            <form>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <label for="password">Senha</label>
+                <input type="password" id="password" placeholder="********" required>
+                <div class="remember-forgot">
+                    <a href="#">Esqueceu sua senha?</a>
+                </div>
+                <button type="submit" class="login-btn">Entrar</button>
+            </form>
+            <p class="signup">Ainda não tem uma conta? <a href="#">Cadastre-se</a></p>
+        </div>
+        <div class="image-section">
+            <img src="{% static 'core/img/image.png' %}" alt="Image">
+        </div>
+    </div>
+    <script src="{% static 'core/js/script.js' %}"></script>
+</body>
+</html>
+

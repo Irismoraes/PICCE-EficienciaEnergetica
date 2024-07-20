@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #c8b6ff;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    transition: width 0.3s;
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.sidebar .logo i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+}
+
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+.sidebar ul li {
+    width: 100%;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li.active a {
+    background-color: #a08eff;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form {
+    background-color: #f3e8ff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.signup-form h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+    color: #5a00a3;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #5a00a3;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d4c2ff;
+    border-radius: 5px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #a08eff;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #a08eff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #5a00a3;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+    }
+
+    .sidebar ul li a {
+        justify-content: center;
+    }
+
+    .sidebar ul li a span {
+        display: none;
+    }
+
+    .sidebar .logo h2 {
+        display: none;
+    }
+
+    .signup-form {
+        padding: 20px;
+    }
+}
+
