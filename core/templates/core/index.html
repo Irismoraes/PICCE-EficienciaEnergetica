@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'core/css/styles.css' %}">
 </head>
 <body>
@@ -15,18 +14,26 @@
                 <img src="{% static 'core/img/logo.png' %}" alt="logo">
             </div>
             <h2>Bem-Vindo</h2>
-            <p>por favor insira seus dados</p>
-            <form>
-                <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
+            <p>Por favor, insira seus dados</p>
+            <form method="post" action="{% url 'aluno_login' %}">
+                {% csrf_token %}
+                <label for="username">E-mail</label>
+                <input type="email" id="id_email" name="username" placeholder="Digite seu email" required>
                 <label for="password">Senha</label>
-                <input type="password" id="password" placeholder="********" required>
+                <input type="password" id="id_senha" name="senha" placeholder="********" required>
                 <div class="remember-forgot">
                     <a href="#">Esqueceu sua senha?</a>
                 </div>
                 <button type="submit" class="login-btn">Entrar</button>
             </form>
-            <p class="signup">Ainda não tem uma conta? <a href="#">Cadastre-se</a></p>
+            <p class="signup">Ainda não tem uma conta? <a href="{% url 'cadastraUsuario' %}">Cadastre-se</a></p>
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </div>
         <div class="image-section">
             <img src="{% static 'core/img/image.png' %}" alt="Image">
@@ -35,4 +42,3 @@
     <script src="{% static 'core/js/script.js' %}"></script>
 </body>
 </html>
-

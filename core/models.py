@@ -24,10 +24,14 @@ class Turma(models.Model):
 
 class Usuario(models.Model):
     nome = models.CharField(max_length=255)
+    sobrenome = models.CharField(max_length=255, default='Desconhecido')
     email = models.EmailField(unique=True)
     senha = models.CharField(max_length=255)
     tipo_usuario = models.CharField(max_length=20, choices=[('professor', 'Professor'), ('aluno', 'Aluno')])
     escola = models.ForeignKey(Escola, on_delete=models.CASCADE)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['nome', 'sobrenome']
 
     def __str__(self):
         return self.nome

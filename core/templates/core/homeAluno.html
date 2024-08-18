@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== BOXICONS ===============-->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="{% static 'core/css/homeAluno.css' %}">
+
+        <title>Página Inicial</title>
+    </head>
+    <body>
+        <!--=============== NAV ===============-->
+        <div class="nav" id="nav">
+            <nav class="nav__content">
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-chevron-right' ></i>
+                </div>
+    
+                <a href="#" class="nav__logo">
+                    <i class='bx bxs-battery-charging' ></i>
+                    <span class="nav__logo-name">Eficiência Energética - PICCE</span>
+                </a>
+    
+                <div class="nav__list">
+                    <a href="#" class="nav__link active-link">
+                        <i class='bx bx-user'></i>
+                        <span class="nav__name">Perfil</span>
+                    </a>
+    
+                    <a href="#" class="nav__link">
+                        <i class='bx bx-grid-alt'></i>
+                        <span class="nav__name">Dashboard</span>
+                    </a>
+    
+                    <a href="#" class="nav__link">
+                        <i class='bx bx-envelope' ></i>
+                        <span class="nav__name">Mensagens</span>
+                    </a>
+    
+                    <a href="#" class="nav__link">
+                        <i class='bx bx-bar-chart-square' ></i>
+                        <span class="nav__name">Resultados</span>
+                    </a>
+    
+                    <a href="#" class="nav__link">
+                        <i class='bx bx-cog' ></i>
+                        <span class="nav__name">Configurações</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <!--=============== MAIN ===============-->
+        <main class="container section">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="{% static 'core/img/sala_de_aula.png' %}" alt="Sala de Aula">
+                    <h3>Nível 1</h3>
+                    <p>Sala de Aula</p>
+                </div>
+                <div class="grid-item">
+                    <img src="{% static 'core/img/biblioteca.png' %}" alt="Biblioteca">
+                    <h3>Nível 2</h3>
+                    <i class='bx bx-star'></i>
+                    <p>Biblioteca</p>
+                </div>
+                <div class="grid-item">
+                    <img src="{% static 'core/img/laboratorio_informatica.jpg' %}" alt="Laboratório de Informática">
+                    <h3>Nível 3</h3>
+                    <p>Laboratório de Informática</p>
+                </div>
+                <div class="grid-item">
+                    <img src="{% static 'core/img/cozinha.png' %}" alt="Cozinha">
+                    <h3>Nível 4</h3>
+                    <p>Cozinha</p>
+                </div>
+            </div>
+        </main>
+        
+
+        <!--=============== MAIN JS ===============-->
+        <script src="{% static 'core/js/homeAluno.js' %}"></script>
+    </body>
+</html>

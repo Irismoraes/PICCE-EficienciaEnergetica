@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Login</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'core/css/styles.css' %}">
+    <title>Página de Cadastro</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/estiloCadastro.css' %}">
 </head>
 <body>
     <div class="container-cadastro">
@@ -16,18 +16,46 @@
                 </div>
             </header>
             <h2>Cadastre-se</h2>
-            <p>por favor insira seus dados</p>
-            <form>
+            <p>Por favor, insira seus dados</p>
+            <form method="POST" action="{% url 'cadastraUsuario' %}?form_type=aluno" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name="form_type" value="aluno">
+
                 <label for="nome">Nome</label>
-                <input type="nome" id="nome" placeholder="Entre com o seu primeiro nome" required>
+                <input type="text" id="nome" name="nome" placeholder="Entre com o seu primeiro nome" required>
+
                 <label for="sobrenome">Sobrenome</label>
-                <input type="sobrenome" id="sobrenome" placeholder="Informe seu sobrenome" required>
+                <input type="text" id="sobrenome" name="sobrenome" placeholder="Informe seu sobrenome" required>
+
+                <label for="escola">Selecione a sua escola:</label>
+                <select type="text" name="escola" id="escola">
+                    {% for escola in escolas %}
+                        <option type="text" value="{{ escola.id }}">{{ escola.nome }}</option>
+                    {% endfor %}
+                </select>
+
                 <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
-                <label for="password">Senha</label>
-                <input type="password" id="password" placeholder="********" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="********" required>
+
+                <label for="matricula">Matrícula</label>
+                <input type="text" id="matricula" name="matricula" placeholder="Informe a matrícula" required>
+
+                <label for="ano">Ano</label>
+                <input type="text" id="ano" name="ano" placeholder="Informe o ano" required>
+
+                 <label for="turma">Selecione a turma:</label>
+                    <select name="turma" id="turma">
+                        {% for turma in turmas %}
+                            <option value="{{ turma.id }}">{{ turma.nome }}</option>
+                        {% endfor %}
+                    </select>
+
                 <button type="submit" class="login-btn">Cadastre-se</button>
             </form>
+
             <p class="signup">Já tem uma conta? <a href="#">Login</a></p>
         </div>
         <div class="image-section">

@@ -186,7 +186,7 @@ select {
     box-shadow: 12px 15px rgba(0,0,0,0.1);
     padding: 20px;
     border-top: 1px solid #ccc; /* Adiciona uma borda superior de 1px sólida */
-    margin-top: 130px; /* Espaço acima do container */
+    margin-top: 10px; /* Espaço acima do container */
     position: relative;
 }
 
